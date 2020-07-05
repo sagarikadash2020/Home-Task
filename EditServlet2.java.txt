@@ -1,0 +1,47 @@
+import java.io.IOException;  
+import java.io.PrintWriter;  
+  
+import javax.servlet.ServletException;  
+import javax.servlet.annotation.WebServlet;  
+import javax.servlet.http.HttpServlet;  
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse;  
+@WebServlet("/EditServlet2")  
+public class EditServlet2 extends HttpServlet {  
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)   
+          throws ServletException, IOException {  
+        response.setContentType("text/html");  
+        PrintWriter out=response.getWriter();  
+          
+        String sid=request.getParameter("id");  
+        int id=Integer.parseInt(sid);  
+        String name=request.getParameter("firstname");  
+        String password=request.getParameter("lastname");  
+        String email=request.getParameter("address");  
+        String country=request.getParameter("country");  
+        String city=request.getParameter("city"); 
+        String postcode=request.getParameter("postcode"); 
+        String telephone=request.getParameter("telephone"); 
+        String salary=request.getParameter("salary"); 
+
+        Emp e=new Emp();  
+        e.setId(id);  
+        e.setName(firstname);  
+        e.setPassword(lastname);  
+        e.setEmail(address);  
+        e.setCountry(country);  
+        e.setCountry(city);
+        e.setCountry(telephone); 
+        e.setCountry(salary);
+ 
+        int status=EmpDao.update(e);  
+        if(status>0){  
+            response.sendRedirect("ViewServlet");  
+        }else{  
+            out.println("Sorry! unable to update record");  
+        }  
+          
+        out.close();  
+    }  
+  
+} 
