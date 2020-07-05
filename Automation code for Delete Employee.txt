@@ -1,0 +1,41 @@
+------------------------------------
+Delete Employee Code
+------------------------------------
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
+public class DeleteEMP {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+System.setProperty("wbdriver.chrome.driver", "C:\\chromedriver.exe");
+ WebDriver driver=new ChromeDriver();
+ driver.get("https://www.EMPsite.com/");
+ Thread.sleep(2000);
+ 
+ //Deleting Employee Record
+ driver.findElement(By.xpath("//a[@value='ViewEmp']")).Click();
+
+while(ID=1)
+
+{
+
+driver.findElement(By.xpath("//a[@value='Delete']")).Click();
+
+ID++;
+
+}
+ 
+ 
+//Print Confirmation message on console
+
+System.out.println(driver.switchTo().alert().getText());
+
+driver.switchTo().alert().accept();
+
+}
+

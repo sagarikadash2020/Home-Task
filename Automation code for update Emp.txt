@@ -1,0 +1,46 @@
+------------------------------------
+Update Employee Code
+------------------------------------
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
+public class DeleteEMP {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+System.setProperty("wbdriver.chrome.driver", "C:\\chromedriver.exe");
+ WebDriver driver=new ChromeDriver();
+ driver.get("https://www.EMPsite.com/");
+ Thread.sleep(2000);
+ 
+ //Edit Employee Record
+ driver.findElement(By.xpath("//a[@value='ViewEmp']")).Click();
+
+while(ID=1)
+
+{
+
+driver.findElement(By.xpath("//a[@value='edit']")).Click();
+
+ID++;
+
+}
+
+driver.findElement(By.xpath("//input[@id='sal']")).clear();
+driver.findElement(By.xpath("//input[@id='sal']")).sendKeys("600");
+
+// click on the Save button
+
+driver.findElement(By.xpath("//input[@id='save']")).Click();
+
+//Print Confirmation message on console
+
+System.out.println(driver.switchTo().alert().getText());
+
+driver.switchTo().alert().accept();
+
+}
